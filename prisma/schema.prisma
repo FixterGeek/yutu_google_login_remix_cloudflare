@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "mongodb"
+  url       = env("PRISMA_PROXY")
+  directUrl = env("MONGO_URL")
+}
+
+model User {
+  name          String?
+  email         String  @unique
+  id            String  @id @default(auto()) @map("_id") @db.ObjectId
+  access_token  String?
+  picture       String?
+  provider      String?
+  refresh_token String?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}

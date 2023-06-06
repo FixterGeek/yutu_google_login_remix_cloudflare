@@ -1,0 +1,19 @@
+name = "remix-cloudflare-workers"
+
+workers_dev = true
+main = "./build/index.js"
+compatibility_date = "2022-04-05"
+compatibility_flags = ["streams_enable_constructors"]
+
+[site]
+  bucket = "./public"
+
+[build]
+  command = "npm run build"
+
+[vars]
+PRISMA_PROXY="prisma://aws-us-east-1.prisma-data.com/?api_key=6qgpTy1HXo08fE1u2q4mt051hB8EZVIL3r8X-UDCozQU8LdMlNTYWAJNaAw-O7Up"
+MONGO_URL="mongodb+srv://yutus:daqSJSTwc0C9Fr2p@cluster0.ctjwaaq.mongodb.net/yutu?retryWrites=true&w=majority"
+GOOGLE_CLIENT_ID="325591888601-25956ljbonbt1j1k0fmsf9i5h91bkdr6.apps.googleusercontent.com"
+GOOGLE_SECRET="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"
+ENV="production"
